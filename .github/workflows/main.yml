@@ -1,9 +1,10 @@
 name: "Terraform"
 
 on:
-  push:
-    branches:
-      - main
+  # Uncomment to enable workflow
+  #push:
+  #  branches:
+  #    - main
   pull_request:
 
 jobs:
