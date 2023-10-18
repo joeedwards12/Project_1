@@ -21,6 +21,6 @@ resource "aws_iam_role_policy_attachment" "ec2_role_policy" {
 }
 
 resource "aws_iam_instance_profile" "example_ec2_instance_profile" {
-  name = "example_ec2_instance_profile"
+  name = "test_ec2_instance_profile"
   role = "ec2-role"
 }
