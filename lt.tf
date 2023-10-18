@@ -12,7 +12,7 @@ sudo systemctl enable amazon-ssm-agent
 yum -y install httpd
 systemctl start httpd
 systemctl enable httpd
-echo '<html><h1>Hello From Your Web Server!</h1></html>' > /var/www/html/index.html
+echo '<html><h1>Hello From Your Web Server! Welcome!</h1></html>' > /var/www/html/index.html
  EOF
   )
 
