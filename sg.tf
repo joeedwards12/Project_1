@@ -44,6 +44,16 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
+resource "aws_vpc_security_group_ingress_rule" "ec2-ingress-from-RDS" {
+  security_group_id            = aws_security_group.ec2_sg.id
+  description                  = "MySQL from RDS"
+  from_port                    = 3306
+  to_port                      = 3306
+  ip_protocol                  = "tcp"
+  referenced_security_group_id = aws_security_group.rds_sg.id
+  depends_on                   = [aws_security_group.ec2_sg]
+}
+
 resource "aws_security_group" "rds_sg" {
   name        = "rds-sg"
   description = "Security group for RDS"
